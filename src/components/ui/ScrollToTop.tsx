@@ -36,7 +36,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.25 }}
-          className="fixed bottom-20 sm:bottom-8 right-5 z-40"
+          className="fixed bottom-24 lg:bottom-8 right-4 sm:right-6 z-40"
         >
           {/* Continuous subtle floating / bouncy animation */}
           <motion.button

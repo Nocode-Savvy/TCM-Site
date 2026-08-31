@@ -99,11 +99,19 @@ export default function HomePage() {
             <p className="text-cream/80 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
               Cleaning and handyman services under one roof. Reliable, honest, and local to East Texas.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/booking" id="hero-quote-btn" className="btn-gold text-base py-4 px-8">
+            <div className="flex flex-col sm:flex-row gap-3.5 items-center justify-center max-w-xs sm:max-w-none mx-auto">
+              <Link
+                href="/booking"
+                id="hero-quote-btn"
+                className="btn-gold text-sm sm:text-base py-3.5 sm:py-4 px-7 sm:px-8 w-full sm:w-auto justify-center shadow-lg"
+              >
                 Get a Free Quote
               </Link>
-              <a href="tel:9362012261" id="hero-call-btn" className="btn-outline-cream text-base py-4 px-8">
+              <a
+                href="tel:9362012261"
+                id="hero-call-btn"
+                className="btn-outline-cream text-sm sm:text-base py-3.5 sm:py-4 px-7 sm:px-8 w-full sm:w-auto justify-center"
+              >
                 Call Now
               </a>
             </div>

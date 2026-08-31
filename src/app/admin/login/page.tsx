@@ -108,9 +108,17 @@ export default function AdminLoginPage() {
           </form>
         </div>
 
-        <p className="text-cream/30 text-xs text-center mt-6 font-sans">
-          Authorized personnel only
-        </p>
+        <div className="text-center mt-6 space-y-2">
+          <p className="text-cream/30 text-xs font-sans">
+            Authorized personnel only
+          </p>
+          <a
+            href="/"
+            className="inline-block text-gold/70 hover:text-gold text-xs transition-colors"
+          >
+            ← Back to Live Website
+          </a>
+        </div>
       </div>
     </div>
   );

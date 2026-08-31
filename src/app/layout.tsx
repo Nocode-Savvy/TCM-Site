@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import MobileBottomBar from '@/components/layout/MobileBottomBar';
-import ScrollToTop from '@/components/ui/ScrollToTop';
+import ConditionalSiteLayout from '@/components/layout/ConditionalSiteLayout';
 import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
@@ -44,11 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <MobileBottomBar />
-        <ScrollToTop />
+        <ConditionalSiteLayout>{children}</ConditionalSiteLayout>
         <Toaster
           position="top-center"
           toastOptions={{

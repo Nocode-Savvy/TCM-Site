@@ -9,13 +9,14 @@ const QUICK_LINKS = [
   { href: '/reviews', label: 'Reviews' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/booking', label: 'Get a Quote' },
+  { href: '/admin/login', label: 'Admin Portal', isSpecial: true },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-forest text-cream" role="contentinfo">
+    <footer className="bg-forest text-cream pb-24 lg:pb-0" role="contentinfo">
       {/* Top border */}
       <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-40" />
 
@@ -54,8 +55,13 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-cream/70 text-sm hover:text-gold transition-colors duration-200"
+                      className={`text-sm transition-colors duration-200 inline-flex items-center gap-1.5 ${
+                        link.isSpecial
+                          ? 'text-gold/90 hover:text-gold font-medium'
+                          : 'text-cream/70 hover:text-gold'
+                      }`}
                     >
+                      {link.isSpecial && <Lock size={12} className="text-gold" />}
                       {link.label}
                     </Link>
                   </li>
@@ -121,7 +127,7 @@ export default function Footer() {
             <Link
               href="/admin/login"
               id="footer-admin-link"
-              className="inline-flex items-center gap-1.5 text-cream/40 hover:text-gold transition-colors duration-200 focus:outline-none focus:text-gold"
+              className="inline-flex items-center gap-1.5 text-cream/50 hover:text-gold transition-colors duration-200 focus:outline-none focus:text-gold"
             >
               <Lock size={11} className="opacity-70" />
               Admin Portal
