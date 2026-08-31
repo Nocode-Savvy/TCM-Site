@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-body bg-white;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Gold botanical divider */
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+  }
+
+  .gold-divider::before,
+  .gold-divider::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, #C9A24B, transparent);
+  }
+
+  .gold-divider-icon {
+    color: #C9A24B;
+    font-size: 14px;
+  }
+
+  /* Buttons */
+  .btn-gold {
+    @apply bg-gold text-white font-sans font-semibold rounded-full px-7 py-3 
+           transition-all duration-200 hover:bg-gold-dark hover:shadow-gold 
+           hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2;
+  }
+
+  .btn-outline-cream {
+    @apply border-2 border-cream text-cream font-sans font-semibold rounded-full px-7 py-3 
+           transition-all duration-200 hover:bg-cream hover:text-forest 
+           active:scale-[0.98] inline-flex items-center gap-2;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-gold text-gold font-sans font-semibold rounded-full px-7 py-3 
+           transition-all duration-200 hover:bg-gold hover:text-white 
+           active:scale-[0.98] inline-flex items-center gap-2;
+  }
+
+  /* Section headings */
+  .section-label {
+    @apply text-gold font-sans font-semibold text-sm tracking-widest uppercase;
+  }
+
+  .section-heading {
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-card shadow-card transition-all duration-200 
+           hover:shadow-card-hover hover:scale-[1.02];
+  }
+
+  /* Gradient overlays */
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(31, 51, 37, 0.85) 0%,
+      rgba(31, 51, 37, 0.6) 50%,
+      rgba(31, 51, 37, 0.4) 100%
+    );
+  }
+
+  /* Gold star */
+  .star {
+    color: #C9A24B;
+  }
+
+  /* Nav link hover */
+  .nav-link {
+    @apply text-sm font-medium text-cream/80 hover:text-gold transition-colors duration-200 
+           relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px 
+           after:bg-gold after:transition-all after:duration-200 hover:after:w-full;
+  }
+
+  .nav-link-dark {
+    @apply text-sm font-medium text-forest/80 hover:text-gold transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5EFE3;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A24B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8842E;
+}
